@@ -1,3 +1,7 @@
 <div>
-    proposals
+
+    <pre>
+        proposals
+    </pre>
+
 </div>
