@@ -1,8 +1,3 @@
-<div>
-    <x-project-card: $project />
-    <pre>
-        title: {{ $project->title}}
-        description: {{!! $project->description !!}}
-    </pre>
-
+<div class="col-span-2">
+    <x-projects.card :$project />
 </div>

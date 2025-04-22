@@ -2,8 +2,10 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
+use App\Models\User;
+use App\ProjectStatus;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class Project extends Model
 {
@@ -11,6 +13,16 @@ class Project extends Model
     use HasFactory;
 
     protected $casts = [
+
         'tech_stack' => 'array',
+        'status' => ProjectStatus::class,
+        'ends_at' => 'datetime',
     ];
+
+    public function author()
+    {
+
+        return $this ->belongsTo(User::class, 'created_by');
+
+    }
 }
